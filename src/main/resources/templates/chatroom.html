@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello</title>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"
+    integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP"
+    crossorigin="anonymous"></script>
+  <link href="/main.css" rel="stylesheet">
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.3.0/sockjs.min.js"
+    integrity="sha256-hA6gdrQ9v1ZKkJuwgtwod0CpbzxEg/zAJPcXYwba7Mc="
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@5.2.0/bundles/stomp.umd.min.js"
+    integrity="sha256-FYSxiDXhuQHegzUr8h+Ao2Se84TZIZo7WGN5ssT3vy0="
+    crossorigin="anonymous"></script>
+  <script src="/scripts/chatroom.js"></script>
+  <meta name="chatroom" th:attr="value=${chatroomId}"/>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+  enabled. Please enable
+  Javascript and reload this page!</h2></noscript>
+<div id="main-content" class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="connect">Enter the chatroom:</label>
+          <button id="connect" class="btn btn-default" type="submit">Connect</button>
+          <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Leave
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table id="conversation" class="table table-striped">
+        <tbody id="messages">
+        <tr>Welcome</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <form id="send-message">
+      <input type="text" name="message-body"/>
+      <input id="send" type="submit" value="Send"/>
+    </form>
+  </div>
+</div>
+</body>
+</html>

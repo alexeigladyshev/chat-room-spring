@@ -1,0 +1,4 @@
+.chatroom {
+    max-height: 400px;
+    overflow-x: scroll;
+}

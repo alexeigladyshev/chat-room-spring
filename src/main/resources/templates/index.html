@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome </title>
+  <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/main.css" rel="stylesheet">
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+  enabled. Please enable
+  Javascript and reload this page!</h2></noscript>
+<div id="main-content" class="container">
+  <form action="/enter-chatroom" method="post">
+    <label>Your name:</label>
+    <input id="username-input" name="username" type="text">
+    <label for="room-number-input">Enter number of chatroom to enter:</label>
+    <input id="room-number-input" name="chatroomId" type="number">
+    <label for="room-code-input">Enter a passphrase to secure a new room or enter an existing protected room. Leave blank for public rooms:</label>
+    <input id="room-code-input" name="passcode" type="text">
+    <input type="submit">
+  </form>
+</div>
+</body>
+</html>
